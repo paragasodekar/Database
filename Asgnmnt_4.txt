@@ -1,0 +1,15 @@
+/*que.1*/
+use parag;
+select onum,amt,odae from orders;
+
+/* que.2*/
+select snum from customers where snum=1001;
+
+/* que.3*/
+select city,sname,snum,comm from salespeople;
+
+/*que.4*/
+select rating,cname from customers where city='san jose';
+
+/* que.5*/
+select distinct snum,onum from orders; 

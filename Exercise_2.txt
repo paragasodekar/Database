@@ -1,0 +1,21 @@
+/* Que.1 */
+use parag;
+select `s#`,sname,'status',city from s order by city desc;
+					/*OR*/
+select * from s order by city desc;
+
+/* Que.2 Display the Part Table in the ascending order of CITY and within the city in
+the ascending order of Part names.*/
+
+select * from p order by city,pname;
+
+/* Que.3 Display all the Suppliers with a status between 10 and 20. */
+
+select * from s where 'status' between 10 and 20;
+
+/* Que.4 Display all the Parts and their Weight, which are not in the range of 10 and 15.*/
+
+select `p#`,weight from p where weight not between 10 and 15;
+
+/* Que.5 Display all the Part names starting with the letter ‘S’.
+

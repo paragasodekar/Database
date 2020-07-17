@@ -1,0 +1,32 @@
+/* Que.1 Write a query that will give you all orders for more than Rs. 1,000 */
+
+select amt from orders where amt>1000;
+
+/* Que.2 Write a query that will give you the names and cities of all salespeople in
+London with a commission above .10. */
+
+select comm from salespeople where city = 'London' and comm > 0.10;
+
+/* Que.3 Write a query on the Customers table whose output will exclude all customers
+with a rating <= 100, unless they are located in Rome. */
+
+select * from customers where rating > 100 and city = 'Rome';
+
+
+/* Que.4 4) What will be the output from the following query?
+
+ Select * from Orders where (amt < 1000 OR NOT (odate = ‘1990-10-03’ AND cnum > 2003));   */
+
+Ans.
+
+
+/* Que.5*/
+
+
+
+/* Que.6 What is a simpler way to write this query? */
+
+select * from salespeople where comm between 0.12 and 0.14;
+		/* OR */
+Select * From Salespeople where (comm > 0.12 and comm < 0.14);
+ 
