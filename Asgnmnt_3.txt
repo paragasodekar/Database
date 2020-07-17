@@ -1,0 +1,5 @@
+que.01. Does ANSI recognize the data type DATE?
+Ans. Yes ANSI recognize the date Data type in 'YYYY-MM-DD' Format.
+
+Que.02. Which subdivision of SQL is used to insert values in tables?
+Ans. DML-Data Manipulation Laguage consist of Insert Into Command which is used to insert values in tables.
