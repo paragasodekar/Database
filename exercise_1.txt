@@ -113,5 +113,5 @@ select * from s where city<>'London';
 /* Que.15 Assuming that the Part Weight is in GRAMS, display the same in
 MILLIGRAMS and KILOGRAMS. */
 
-select weight*1000 "weight in milli", weight*1000*1000 "weight in Kg"from p;
+select weight/1000 "weight in milli", weight*1000*1000 "weight in Kg"from p;
 
