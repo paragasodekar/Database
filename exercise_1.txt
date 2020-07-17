@@ -94,3 +94,24 @@ select city from s where city='London'or city='Athens';
 /* que.10*/
 
 select city from p where city='Athens'
+
+/* Que.11 1.Display all the Partnames with the weight between 12 and 14 (inclusive of both).*/
+
+select pname from p where weight>=12 and weight<=14;
+
+/* Que.12 Display all the Suppliers with a Status greater than or equal to 20.*/
+
+select * from s where 'status' >=20;
+
+/* Que.13 Display all the Suppliers except the Suppliers from London.*/
+
+select * from s where city<>'London'; 
+
+/* Que.14 Display only the Cities from where the Suppliers come from.*/ 
+     select city from s;
+
+/* Que.15 Assuming that the Part Weight is in GRAMS, display the same in
+MILLIGRAMS and KILOGRAMS. */
+
+select weight*1000 "weight in milli", weight*1000*1000 "weight in Kg"from p;
+
