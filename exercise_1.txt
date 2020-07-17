@@ -108,7 +108,7 @@ select * from s where 'status' >=20;
 select * from s where city<>'London'; 
 
 /* Que.14 Display only the Cities from where the Suppliers come from.*/ 
-     select city from s;
+     select distinct city from s;
 
 /* Que.15 Assuming that the Part Weight is in GRAMS, display the same in
 MILLIGRAMS and KILOGRAMS. */
