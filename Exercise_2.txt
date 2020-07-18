@@ -17,5 +17,15 @@ select * from s where 'status' between 10 and 20;
 
 select `p#`,weight from p where weight not between 10 and 15;
 
-/* Que.5 Display all the Part names starting with the letter ‘S’.
+/* Que.5 Display all the Part names starting with the letter ‘S’.*/
+
+select pname from p where pname like 's%';
+
+/* Que.6 Display all the Suppliers, belonging to cities starting with the letter ‘L’. */
+
+select sname from s where city like 'l%';
+
+/* Que.7 Display all the Projects, with the third letter in JNAME as ‘n’*/
+
+ select * from j where jname like '__n%';
 
