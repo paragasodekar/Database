@@ -1,0 +1,31 @@
+/* Que.1 Display all the Supplier names with the initial letter capital. */
+use parag;
+select initcap(sname) from s;
+
+/* Que.2 Display all the Supplier names in upper case. */
+
+select upper(sname) from s;
+
+/* Que.3 Display all the Supplier names in lower case. */
+
+select lower(sname) from s;
+
+/* Que.4 Display all the Supplier names padded to 25 characters, with spaces on the left. */
+
+select lpad(sname,25,'') from s;
+
+/* Que.5 Display all the Supplier names (with ‘la’ replaced by ‘ro’). */
+
+select replace(sname,'la','ro') from s;
+
+/* Que.6 Implement the above command such that ‘l’ is replaced with ‘r’ and ‘a’ is replaced
+with ‘o’. */
+select replace(replace(sname,'l','r'),'a','o') from s;
+
+/* Que.7 Display the Supplier names and the lengths of the names. */
+
+select length(sname),sname from s;
+
+/* Que.8 Use the soundex function to search for a supplier by the name of ‘BLOKE’. */
+
+select sname from s where soundex(sname) = soundex('BLOKE') ;
