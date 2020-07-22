@@ -1,0 +1,29 @@
+/* Que.1 Write a query that lists each order number followed by the name of the customer
+who made the order.*/
+
+select orders.onum, customers.cname
+from orders, customers
+where orders.cnum=customers.cnum;
+
+
+/* Que.2 Write a query that gives the names of both the salesperson and the customer for
+each order along with the order number.	*/
+
+select o.onum, s.sname, c.cname
+from orders o, customers c, salespeople s
+where o.cnum=c.cnum and o.snum=s.snum;
+
+/* Que.3 Write a query that produces all customers serviced by salespeople with a
+commission above 12%. Output the customer’s name, the salesperson’s name,
+and the salesperson’s rate of commission. */
+
+select c.cname, s.sname, s.comm
+from customers c, salespeople s
+where comm > 0.12 and c.snum=s.snum;
+
+/* Que.4 Write a query that calculates the amount of the salesperson’s commission on each
+order by a customer with a rating above 100. */
+
+select s.sname, c.cname, o.amt*s.comm AS "comm"
+from orders o, customers c, salespeople s
+where c.rating > 100 and o.cnum=c.cnum and o.snum=s.snum;
