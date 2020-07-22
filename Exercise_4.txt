@@ -1,0 +1,24 @@
+/* Que.1 Display the minimum Status in the Supplier table.  */
+
+select min(status) from S;
+
+/* Que.2 Display the maximum Weight in the Parts table. */
+
+select max(weight) from p;
+
+/* Que.3 Display the average Weight of the Parts. */
+
+select avg(weight) from p;
+
+/* Que.4 Display the total Quantity sold for part ‘P1’.*/
+
+select qty from spj where `p#`='p1';  
+
+/* Que.5. Display the total Quantity sold for each part. */
+
+select `p#`, qty as "P# qty" from spj;
+
+/* Que.6 Display the average Quantity sold for each part.*/
+
+select avg(qty) as "average of quantity" from spj;
+   
