@@ -1,0 +1,27 @@
+/* Que.1 Write a query that counts all orders for October 3.*/
+
+select count(*) from orders where odate='1990-10-03';
+
+/* Que.2  Write a query that counts the number of different non-NULL city values in the
+Customers table.*/
+
+select count(distinct(city)) from customers where city!='null';
+
+/* Que.3 Write a query that selects each customer’s smallest order.*/
+
+SELECT min(amt) FROM ORDERS GROUP BY CNUM;
+
+/* Que.4 Write a query that selects the first customer, in alphabetical order, whose name
+begins with G.*/
+
+SELECT cname FROM CUSTOMERS WHERE cname LIKE 'G%' ORDER BY cname LIMIT 1;
+
+/* Que.5 Write a query that selects the highest rating in each city.*/
+
+SELECT city, MAX(rating) as "MAX RATING" FROM customers GROUP BY city;
+
+/* Que.6) Write a query that counts the number of salespeople registering orders for each
+day. (If a salesperson has more than one order on a given day, he or she should be
+counted only once.).*/
+
+SELECT count(distinct(odate)), odate FROM orders GROUP BY odate;
