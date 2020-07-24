@@ -1,0 +1,20 @@
+use parag;
+
+/*	Que.1 Write a query that uses a subquery to obtain all orders for the customer named
+Cisneros. Assume you do not know his customer number (cnum).	*/
+
+select * from orders where cnum =(select cnum from customers where cname='Cisneros');
+
+/* Que.2 Write a query that produces the names and ratings of all customers who have
+above-average orders.*/
+
+select cname, rating from customers,orders
+where customers.cnum=orders.cnum
+group by cname
+having count(orders.cnum)>
+(select avg(COUNT_CNUM) from (select count(cnum)as "COUNT_CNUM" from orders group by cnum) as tempp);
+
+/* Que.3  Write a query that selects the total amount in orders for each salesperson for
+whom this total is greater than the amount of the largest order in the table. */
+
+select sum(amt),snum from orders group by snum having sum(amt)>(select max(amt) from orders)
