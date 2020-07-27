@@ -1,0 +1,57 @@
+use parag;
+
+/* Que. 1. Display the Supplier name and the Quantity sold.*/
+
+select sname,qty from s,spj
+where spj.`S#` = S.`S#`;
+
+/* Que. 2. Display the Part name and Quantity sold.*/
+
+select PNAME,QTY from P,SPJ
+where SPJ.`P#` = P.`P#`;
+
+/* Que.3. Display the Project name and Quantity sold.*/
+
+select JNAME,QTY from J,SPJ
+where SPJ.`J#` = J.`J#`;
+
+/* Que.4. Display the Supplier name, Part name, Project name and Quantity sold.*/
+
+select SNAME,PNAME,JNAME,QTY from S,P,J,SPJ
+where SPJ.`S#` = S.`S#`and SPJ.`P#` = P.`P#`and SPJ.`J#` = J.`J#`;
+
+/* Que.5. Display the Supplier name, Supplying Parts to a Project in the same City.*/
+
+select S.SNAME,P.`P#` from S,P,SPJ
+where SPJ.`S#` = S.`S#`and SPJ.`P#` = P.`P#`
+group by S.CITY;
+
+/* Que.6. Display the Part name that is ‘Red’ is color, and the Quantity sold.*/
+
+select P.PNAME,SPJ.QTY from P,SPJ
+where SPJ.`P#` = P.`P#` and P.COLOR='RED';
+
+/* Que.7. Display all the Quantity sold by Suppliers with the Status = 20.*/
+
+select QTY from S,SPJ
+where SPJ.`S#` = S.`S#`and STATUS = 20;
+
+/* Que.8. Display all the Parts and Quantity with a Weight > 14.*/
+
+select P.`P#`,SPJ.QTY from P,SPJ
+where SPJ.`P#` = P.`P#`and P.WEIGHT > 14;
+
+/* Que.9. Display all the Project names and City, which has bought more than 500 Parts.*/
+
+select PNAME,CITY from P,SPJ
+where SPJ.`P#` = P.`P#`and QTY > 500;
+
+/* Que.10. Display all the Part names and Quantity sold that have a Weight less than 15.*/
+
+select PNAME,QTY from P,SPJ
+where SPJ.`P#` = P.`P#`and WEIGHT < 15;
+
+/* Que.11. Display all the Employee names and the name of their Managers.*/
+
+select A.EMPNAME,B.EMPNAME as 'MANAGER' from SEMP A,SEMP B
+where A.DEPTHEAD = B.EMPNO;
