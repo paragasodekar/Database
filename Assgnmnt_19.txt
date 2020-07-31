@@ -1,0 +1,21 @@
+use parag;
+
+/* Que.1 Create a view that shows all of the customers who have the highest ratings.*/
+
+create view high_rating as
+select * from customers group by snum having max(rating);
+	
+/* Que.2 Create a view that shows the number of salespeople in each city.*/
+
+create view count_city as
+select city, count(city) as 'Count' from salesperson group by city;
+
+/* Que.3 Create a view that shows the average and total orders for each salesperson after his or her name. Assume all names are unique.*/
+create view avg_n_total as
+select s.sname,avg(o.amt) as 'Average',count(o.amt) as 'Count' from orders o,salesperson s
+where o.snum=s.snum
+group by sname;
+	
+/* Que.4 Create a view that shows each salesperson with multiple customers.*/
+create view sperson_mul_cust as
+select s.sname,c.cname from salesperson s,customers c where s.snum=c.snum;

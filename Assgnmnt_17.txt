@@ -1,0 +1,38 @@
+use parag;
+
+/* Que.1 Create the Orders table so that all onum values as well as all combinations of cnum and snum are 
+different from one another, and so that NULL values are excluded from the date field.*/
+create table order_new
+(
+ onum int(4),
+cnum int(4),
+odate date not null,
+snum int(4),
+primary key(onum,cnum,snum)
+);
+
+/* Que.2 Create the Salespeople table so that the default commission is 10% with no NULLS permitted, snum is 
+the primary key, and all names fall alphabetically between A and M, inclusive (assume all names will be uppercase)*/
+
+create table salespeople1
+( 
+comm int(3) default 10,
+snum int(4) primary key,
+sname varchar(10) check(substr(upper(sname),1,1) between'A' and 'M') 
+);
+
+
+
+
+/* Que.3 Create the Orders table, making sure that the onum is greater than the cnum, and
+the cnum is greater that the snum. Allow no NULLS in any of these three fields.*/
+
+create table orders12 
+( 
+onum number(4), 
+amt number(7,2), 
+odate date, 
+cnum number(4), 
+snum number(4), 
+contraint on_cn_sn check(cnum>cnum AND cnum>snum) 
+);

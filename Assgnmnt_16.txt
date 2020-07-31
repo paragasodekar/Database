@@ -1,0 +1,24 @@
+use parag;
+
+/* Que.1 Write a command that will enable a user to pull orders grouped by 
+date out of theOrders table quickly.*/
+
+create index index_order on orders (odate);
+
+
+/* Que.2 If the Orders table has already been created, how can you force the onum field to
+be unique (assume all current values are unique)?*/
+
+alter table orders add constraint primary key(onum);
+
+
+/* Que.3 Create an index that would permit each salesperson to retrieve his or her orders
+grouped by date quickly.*/
+
+create index ind_date on orders(odate);
+
+
+/* Que.4 Let us assume that each salesperson is to have only one customer of a given
+rating, and that this is currently the case. Enter a command that enforces it.*/
+
+alter table customer add constraint primary key(rating);
